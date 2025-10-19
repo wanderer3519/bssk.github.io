@@ -18,6 +18,16 @@ header h1 {
     font-size: 2rem;
 }
 
+.profile-photo {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.75rem auto;
+    border: 3px solid rgba(255,255,255,0.85);
+}
+
 section {
     max-width: 800px;
     margin: 2rem auto;
@@ -41,4 +51,55 @@ a:hover {
 
 .contact a {
     margin-right: 1rem;
+}
+
+/* Dark mode styles */
+:root {
+    --bg: #fafafa;
+    --text: #222;
+    --accent: #4285f4;
+    --header-bg: var(--accent);
+}
+
+html[data-theme="dark"] {
+    --bg: #0b0d10;
+    --text: #e6eef8;
+    --accent: #6aa0ff;
+    --header-bg: #0f1720;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--header-bg);
+}
+
+h2 {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+a {
+    color: var(--accent);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: inherit;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid rgba(100,150,255,0.4);
 }
